@@ -1,0 +1,20 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "golden_necklace_01",
+            "description": "Simple golden necklace with small pendant.",
+            "price": 120,
+            "category": "necklace",
+            "imageUrl": "/pexels-ashuphotography-1413420.jpg"
+        },
+        {
+            "id": "2",
+            "name": "golden_necklace_02",
+            "description": "Minimalist golden necklace.",
+            "price": 95,
+            "category": "necklace",
+            "imageUrl": "/pexels-asphotography-94843.jpg"
+        }
+    ]
+}
