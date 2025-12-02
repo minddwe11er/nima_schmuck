@@ -1,4 +1,8 @@
 import './globals.css'
+import { Borel } from 'next/font/google'
+
+const borelFont = Borel({ subsets: ['latin'], weight: ['400'], variable: '--font-borel' })
+
 
 export const metadata = {
   title: 'Nima Schmuck',
@@ -12,11 +16,12 @@ export default async function RootLayout({ children }) {
         <header className="header">
           <div className="container">
             <div className="logo">
-              <h1>Nima Schmuck</h1>
+              <h1 className={borelFont.variable}><a href="/">Nima Schmuck</a></h1>
             </div>
             <nav className="nav">
               <ul>
-                <li><a href="/">Startseite</a></li> <li><a href="/items">Produkte</a></li> <li><a href="/about">Über uns</a></li> <li><a href="/contact">Kontakt</a></li>
+                {/* <a href="/">Startseite</a></li> */}
+                <li><a href="/items">Produkte</a></li> <li><a href="/about">Über uns</a></li> <li><a href="/contact">Kontakt</a></li>
               </ul>
             </nav>
           </div>
@@ -31,7 +36,7 @@ export default async function RootLayout({ children }) {
                 <h3>Nima Schmuck</h3> <p>Feinster Schmuck für besondere Momente.</p>
               </div>
               <div className="footer-section">
-                <h4>Контакти</h4>
+                <h4>Kontakten</h4>
                 <ul>
                   <li>Email: info@nima-schmuck.de</li>
                   <li>Tel: +49 123 456789</li>

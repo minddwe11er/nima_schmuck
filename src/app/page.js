@@ -7,8 +7,8 @@ export default function Home() {
         </div>
         <div className="hero-image">
           <img
-            src="https://via.placeholder.com/800x800/E9C5C5/white?text=Модель+з+намистом"
-            alt="Модель з намистом"
+            src="/hero.jpg"
+            alt="model"
           />
         </div>
       </div>

@@ -80,6 +80,8 @@ body {
 .logo h1 {
     font-size: 2rem;
     color: #e9c5c5; /* Основний акцент для логотипу */
+    font-family: var(--font-borel);
+    vertical-align: middle;
 }
 
 .nav ul {
@@ -696,5 +698,163 @@ body {
 
     .footer {
         padding: 30px 0 15px;
+    }
+}
+
+/* Cart Modal */
+.cart-modal {
+    position: fixed;
+    bottom: 20px; /* Знизу */
+    right: 20px;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(233, 197, 197, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    display: none;
+}
+
+.cart-modal.open {
+    display: block;
+    animation: slideInBottom 0.3s ease-out; /* Плавне появлення знизу */
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cart-content h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cart-summary {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 10px;
+    background: rgba(233, 197, 197, 0.1);
+    border-radius: 5px;
+}
+
+.cart-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 10px;
+}
+
+.cart-checkout {
+    background: #e9c5c5;
+    color: #2c3e50;
+}
+
+.cart-checkout:hover {
+    background: #d9b5b5;
+}
+
+.cart-close {
+    background: transparent;
+    color: #4a4a4a;
+    border: 1px solid #e9c5c5;
+}
+
+.cart-close:hover {
+    background: #e9c5c5;
+    color: #2c3e50;
+}
+
+/* Responsive: Мобілки */
+@media (max-width: 768px) {
+    .cart-modal {
+        bottom: 10px; /* Ближче до краю */
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* Floating Cart Icon */
+.floating-cart-icon {
+    position: fixed;
+    bottom: 80px; /* Вище модалу */
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #e9c5c5; /* Акцентний колір */
+    border: none;
+    border-radius: 50%; /* Кругла, як намисто */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(233, 197, 197, 0.4);
+    z-index: 1001; /* Вище модалу */
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse 2s infinite; /* Плавний "дихальний" ефект */
+}
+
+.floating-cart-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(233, 197, 197, 0.6);
+}
+
+.floating-cart-icon .icon {
+    font-size: 1.5rem;
+    color: #2c3e50; /* Контраст */
+}
+
+.floating-cart-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #d9b5b5;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive: На мобілці — ближче до центру */
+@media (max-width: 768px) {
+    .floating-cart-icon {
+        bottom: 70px;
+        right: 50%;
+        transform: translateX(50%); /* Центруємо */
     }
 }

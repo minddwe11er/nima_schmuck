@@ -1,7 +1,6 @@
 import { fetchProductById } from '@/api/productsAPI';
 
 export default async function Product({ params }) {
-
     const { id } = await params;
 
     let product = null;
@@ -9,7 +8,6 @@ export default async function Product({ params }) {
 
     try {
         product = await fetchProductById(id);
-        console.log(product)
     } catch (err) {
         error = err.message;
     }
