@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function CartModal({ itemsCount = 0, totalSum = 0, isOpen = false, onCheckout, onClose }) {
+export default function CartModal({ itemsCount = 3, totalSum = 0, isOpen = false, onCheckout, onClose }) {
     const handleClose = () => {
         if (onClose) onClose();
     };

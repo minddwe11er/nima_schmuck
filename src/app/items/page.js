@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import Link from 'next/link';
 import SideBar from './SideBar';
@@ -17,9 +18,9 @@ export default function ProductsPage() {
                     <SideBar />
                     <FloatingCartIcon
                         onClick={() => setCartOpen(!cartOpen)}
-                        itemsCount={4}
+                        itemsCount={3}
                         isVisible={!cartOpen} />
-                    <CartModal isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+                    <CartModal isOpen={cartOpen} onClose={() => setCartOpen(false)} onCheckout={() => router.push('/cart')} />
                     <section className="product-grid">
                         <h2 className="products-title">Unser Schmuck</h2>
                         <div className="grid">
