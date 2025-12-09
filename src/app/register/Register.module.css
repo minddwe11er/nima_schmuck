@@ -1,0 +1,182 @@
+/* components/Register.module.css */
+.registerPage {
+    min-height: 100vh;
+    background: #faf7f7; /* Світлий рожевий фон, як у hero/products */
+    display: flex;
+    align-items: center;
+    padding: 80px 0; /* Простір під фіксований хедер */
+    font-family: Arial, Helvetica, sans-serif; /* З globals.css */
+    color: var(--foreground); /* Використовуємо глобальну змінну для тексту */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Стандартний контейнер з globals.css */
+    /* width: 100%; */
+}
+
+.registerFormWrapper {
+    max-width: 400px;
+    /* width: 100%; */
+    margin: 0 auto;
+    background: white; /* Білий фон форми */
+    padding: 40px;
+    border-radius: 10px; /* Закруглення, як у product-card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Тінь, як у hero-image */
+}
+
+.registerTitle {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Темно-сірий для заголовків */
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.2; /* Як у hero-title */
+}
+
+.registerSubtitle {
+    color: #7f8c8d; /* М'який сірий, як у hero-subtitle */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    color: #2c3e50; /* Темно-сірий для лейблів */
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e9c5c5; /* Рожева обводка, як у filters select */
+    border-radius: 5px; /* Стандартне закруглення */
+    font-size: 1rem;
+    background: var(--background); /* Глобальний фон для інпутів */
+    color: var(--foreground); /* Глобальний колір тексту */
+    transition: border-color 0.3s; /* Плавний перехід, як у nav a */
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #d9b5b5; /* Темніший рожевий на фокус */
+}
+
+.registerBtn {
+    width: 100%;
+    background: #e9c5c5; /* Рожевий акцент, як shop-btn */
+    color: #2c3e50; /* Контрастний текст */
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s; /* Плавний hover */
+    margin-top: 10px;
+}
+
+.registerBtn:hover {
+    background: #d9b5b5; /* Темніший рожевий */
+}
+
+.registerLink {
+    text-align: center;
+    margin-top: 20px;
+    color: #4a4a4a; /* Сірий текст, як у nav a */
+    font-size: 0.95rem;
+}
+
+.registerLink a {
+    color: #e9c5c5; /* Рожевий для посилання */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Плавний перехід */
+}
+
+.registerLink a:hover {
+    text-decoration: underline;
+    color: #d9b5b5;
+}
+
+/* Responsive: Планшети та мобілки, як у globals.css */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .registerPage {
+        padding: 70px 0; /* Менше під хедер на мобілці */
+    }
+
+    .registerFormWrapper {
+        padding: 30px 20px;
+        margin: 0 15px; /* Відступи з hero на мобілці */
+    }
+
+    .registerTitle {
+        font-size: 2rem; /* Зменшуємо, як hero-title */
+    }
+
+    .registerSubtitle {
+        font-size: 0.95rem;
+    }
+
+    .registerBtn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .registerFormWrapper {
+        padding: 25px 15px;
+    }
+
+    .registerTitle {
+        font-size: 1.8rem;
+    }
+}
+
+/* Додаткові стилі для валідації */
+.inputField,
+.confirmPassword {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e9c5c5;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #ffffff; /* Білий фон для інпутів, як у select з globals.css — читабельно в обох темах */
+    color: #333; /* Стандартний темно-сірий текст, як у body з globals.css */
+    transition: border-color 0.3s;
+}
+
+.inputField:focus,
+.confirmPassword:focus {
+    outline: none;
+    border-color: #d9b5b5;
+}
+
+.errorField {
+    border-color: #e74c3c !important; /* Червона обводка для помилок */
+}
+
+.errorMessage {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    min-height: 1.25em; /* Простір під помилку */
+}

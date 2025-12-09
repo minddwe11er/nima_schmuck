@@ -11,7 +11,7 @@ export default function CartPage() {
     const totalSum = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
     return (
-        <div className="products"> {/* Фон як у products */}
+        <div className="products">
             <div className="container">
                 <h1 className="products-title">Warenkorb</h1>
 
@@ -19,6 +19,7 @@ export default function CartPage() {
                     <p className="cart-empty">Warenkorb ist leer. Fügen Sie Produkte hinzu!</p>
                 ) : (
                     <>
+
                         <div className="cart-table">
                             {cartItems.map((item) => (
                                 <div key={item.id} className="cart-item">
@@ -37,13 +38,13 @@ export default function CartPage() {
                                 </div>
                             ))}
                         </div>
-
                         <div className="cart-total">
                             <p>Gesamtsumme: <strong>{totalSum} CHF</strong></p>
                             <button className="add-to-cart" style={{ width: 'auto', marginTop: '20px' }}>
                                 Bestellung abschließen
                             </button>
                         </div>
+
                     </>
                 )}
             </div>

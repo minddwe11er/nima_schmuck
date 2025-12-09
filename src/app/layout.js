@@ -1,7 +1,6 @@
 import './globals.css'
-import { Borel } from 'next/font/google'
 
-const borelFont = Borel({ subsets: ['latin'], weight: ['400'], variable: '--font-borel' })
+import ConditionalHeader from './ConditionalHeader';
 
 export const metadata = {
   title: 'Nima Schmuck',
@@ -9,35 +8,11 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  const cartCount = 3; // placeholder for cart count, replace with actual state management
-
+  // placeholder for cart count, replace with actual state management
   return (
     <html lang="de">
       <body>
-        <header className="header">
-          <div className="container">
-            <div className="logo">
-              <h1 className={borelFont.variable}><a href="/">Nima Schmuck</a></h1>
-            </div>
-            <nav className="nav">
-              <ul>
-                <li><a href="/items">Produkte</a></li>
-                <li><a href="/about">Über uns</a></li>
-                <li><a href="/contact">Kontakt</a></li>
-                {/* Кошик */}
-                <li className="cart-link">
-                  <a href="/cart" className="cart-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 3H5L5.4 5M7 13H17L21 5H5M7 13L5.4 5M7 13L4.707 15.293A1 1 0 0 0 4.414 16L4 17L5 19H19M7 13H19" stroke="#4a4a4a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-
+        <ConditionalHeader />
         <main>{children}</main>
 
         <footer className="footer">

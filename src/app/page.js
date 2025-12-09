@@ -1,10 +1,29 @@
+import Link from 'next/link';
+import { Delius } from 'next/font/google'
+
+const heroFont = Delius({ subsets: ['latin'], weight: ['400'], variable: '--font-hero' })
 
 export default function Home() {
   return (
     <section className="hero">
       <div className="container">
         <div className="hero-content">
-          <span className="jewelry-label">Schmuck</span> <h2 className="hero-title">Leuchte hell mit Nima</h2> <p className="hero-subtitle">Jeder Tag ist dein besonderer Tag mit unserem Schmuck.</p> <button className="shop-btn">Shop</button>
+          <div className="hero-title">
+            <h2 className={heroFont.variable}>Schmuck mit Bedeutung, liebevoll handgefertigt</h2>
+          </div>
+          <p className="hero-subtitle">
+            Entdecke Armbändeli und Ohrringe, die Schönheit mit der besonderen Kraft der
+            Edelsteine vereinen – jedes Stück ein liebevoller Begleiter für Mut, Liebe und
+            Gelassenheit.
+          </p>
+          <div className="cta-buttons">
+            <Link href="/items" className="link-wrapper">
+              <button className="shop-btn">Kollektion entdecken</button>
+            </Link>
+            <Link href="/stein-finden" className="link-wrapper"> {/* НОВЕ: Обгортка для вторинної */}
+              <button className="secondary-btn">Finde deinen Stein</button>
+            </Link>
+          </div>
         </div>
         <div className="hero-image">
           <img

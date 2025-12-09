@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import Link from 'next/link';
+// import Link from 'next/link';
 import SideBar from './SideBar';
 import CartModal from '../CartModal';
 import FloatingCartIcon from '../FloatingCartIcon';
 
 export default function ProductsPage() {
     const [cartOpen, setCartOpen] = useState(false);
-
+    const router = useRouter();
     return (
         <>
             <main className="products">

@@ -1,0 +1,190 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 229, 229, 0.5); /* Напівпрозорий оверлей */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000; /* Вище хедера та кошика */
+    backdrop-filter: blur(5px); /* Легкий блюр, як у header */
+}
+
+.modal {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Трохи сильніша тінь */
+    animation: slideIn 0.3s ease-out; /* Плавне появлення */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.closeBtn:hover {
+    color: #e9c5c5;
+}
+
+.title {
+    font-size: 2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.inputField {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e9c5c5;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #ffffff;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.inputField:focus {
+    outline: none;
+    border-color: #d9b5b5;
+}
+
+.errorField {
+    border-color: #e74c3c !important;
+}
+
+.errorMessage {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    min-height: 1.25em;
+}
+
+.loginBtn {
+    width: 100%;
+    background: #e9c5c5;
+    color: #2c3e50;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.loginBtn:hover:not(:disabled) {
+    background: #d9b5b5;
+}
+
+.loginBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.link {
+    text-align: center;
+    margin-top: 20px;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+}
+
+.link a {
+    color: #e9c5c5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.link a:hover {
+    text-decoration: underline;
+    color: #d9b5b5;
+}
+
+/* Responsive: Мобілки */
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+        padding: 25px 20px;
+        margin: 20px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .closeBtn {
+        top: 10px;
+        right: 15px;
+    }
+}
+
+/* Темна тема (опціонально) */
+@media (prefers-color-scheme: dark) {
+    .modal {
+        background: #ffffff;
+    }
+
+    .inputField {
+        background: var(--background);
+        color: var(--foreground);
+    }
+
+    .title {
+        color: #2c3e50;
+    }
+
+    .subtitle,
+    .formGroup label,
+    .link {
+        color: #bdc3c7;
+    }
+}

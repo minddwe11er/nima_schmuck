@@ -2,7 +2,7 @@
     "products": [
         {
             "id": "1",
-            "name": "golden_necklace_01",
+            "name": "Pendant",
             "description": "Simple golden necklace with small pendant.",
             "price": 120,
             "category": "necklace",
@@ -16,5 +16,14 @@
             "category": "necklace",
             "imageUrl": "/pexels-asphotography-94843.jpg"
         }
-    ]
+    ],
+    "pages": {
+        "hero": {
+            "title": "Schmuck mit Bedeutung, liebevoll handgefertigt",
+            "subtitle": "Entdecke Armbändeli und Ohrringe, die Schönheit mit der besonderen Kraft der Edelsteine vereinen – jedes Stück ein liebevoller Begleiter für Mut, Liebe und Gelassenheit.",
+            "label": "Luxusjuwelen",
+            "image": "/images/hero.jpg"
+        }
+    }
 }
+                      
