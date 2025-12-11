@@ -3,9 +3,9 @@
 
 export default function CartPage() {
     const cartItems = [
-        { id: 1, name: 'Silberne Perlenkette', price: 450, quantity: 1, image: '/placeholder-namisto.jpg' },
-        { id: 2, name: 'Goldene Tropfenohrringe', price: 320, quantity: 2, image: '/placeholder-serizhky.jpg' },
-        { id: 3, name: 'Armband mit Edelsteinen', price: 280, quantity: 1, image: '/placeholder-braslet.jpg' },
+        { id: 1, name: 'Silberne Perlenkette', price: 20, quantity: 1, image: '/1.jpg' },
+        { id: 2, name: 'Goldene Tropfenohrringe', price: 23, quantity: 2, image: '/2.jpg' },
+        { id: 3, name: 'Armband mit Edelsteinen', price: 30, quantity: 1, image: '/3.jpg' },
     ];
 
     const totalSum = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -41,7 +41,7 @@ export default function CartPage() {
                         <div className="cart-total">
                             <p>Gesamtsumme: <strong>{totalSum} CHF</strong></p>
                             <button className="add-to-cart" style={{ width: 'auto', marginTop: '20px' }}>
-                                Bestellung abschließen
+                                Bestellung abschliessen
                             </button>
                         </div>
 

@@ -52,7 +52,7 @@ export default function ProductsPage() {
     }, [searchParams]);
 
     const handleAddToCart = (product) => {
-        const imageUrl = `https://nima.crazy-internet.ch/team3-backend/images/${product.card_front || 'placeholder.jpg'}`;
+        const imageUrl = `https://nima.crazy-internet.ch/team3-backend/images/${product.card_front || '/1.jpg'}`;
         addToCart(product.id, {
             name: product.name,
             price: product.price,
@@ -118,7 +118,7 @@ export default function ProductsPage() {
                                         <article className="product-card">
                                             <div className="image-wrapper">
                                                 <img
-                                                    src={`https://nima.crazy-internet.ch/team3-backend/images/${product.card_front || 'placeholder.jpg'}`}
+                                                    src={product.card_front || product.card_back ? `https://nima.crazy-internet.ch/team3-backend/images/${product.card_front}` : '/1.jpg'}
                                                     alt={product.name}
                                                     className="card-image"
                                                     style={{
