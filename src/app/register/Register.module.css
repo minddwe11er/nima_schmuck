@@ -65,7 +65,7 @@
     border-radius: 5px; /* Стандартне закруглення */
     font-size: 1rem;
     background: var(--background); /* Глобальний фон для інпутів */
-    color: var(--foreground); /* Глобальний колір тексту */
+    color: #434242; /* Глобальний колір тексту */
     transition: border-color 0.3s; /* Плавний перехід, як у nav a */
 }
 

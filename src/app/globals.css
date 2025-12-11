@@ -403,6 +403,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
 }
 
 .sidebar-title {
@@ -494,6 +495,14 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+}
+
+.product-card .image-wrapper {
+    width: 100%;
+    height: 250px; /* Фіксована висота — тут "крупність" */
+    overflow: hidden; /* Обрізає зайве від scale */
+    border-radius: 10px 10px 0 0; /* Закруглення верху */
+    position: relative; /* Якщо треба для позиціонування */
 }
 
 .product-card:hover {
@@ -1238,4 +1247,113 @@ body {
 
 .login-content button:hover {
     background: #d9b5b5;
+}
+
+/* About Page Styles */
+.about-page {
+    background: #faf7f7; /* Наш світлий фон */
+}
+
+.about-hero {
+    min-height: 20vh; /* Зменшили з 60vh */
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Під хедер */
+    text-align: center;
+}
+
+.about-title {
+    font-size: 3rem; /* Зменшили з 3.5rem */
+    color: #2c3e50;
+    margin-bottom: 15px; /* Зменшили з 20px */
+    line-height: 1.2;
+}
+
+.about-subtitle {
+    font-size: 1.1rem; /* Зменшили з 1.2rem */
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-story,
+.about-mission {
+    padding: 10px 0; /* Зменшили з 80px */
+}
+
+.section-title {
+    font-size: 2.2rem; /* Зменшили з 2.5rem */
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px; /* Зменшили з 30px */
+}
+
+.story-text,
+.mission-text {
+    font-size: 1rem; /* Зменшили з 1.1rem */
+    color: #4a4a4a;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.story-image {
+    text-align: center;
+    margin-top: 20px;
+    /* Зменшили з 40px */
+}
+
+.story-image img {
+    max-width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-mission {
+    /* Додали для центрування кнопки */
+    text-align: center;
+}
+
+.shop-btn {
+    display: inline-block;
+    background: #e9c5c5;
+    color: #2c3e50;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin: 0 auto;
+    height: 52px;
+}
+
+.shop-btn:hover {
+    background: #d9b5b5;
+}
+
+/* Responsive для About */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.2rem; /* Зменшили з 2.5rem */
+    }
+
+    .about-subtitle {
+        font-size: 0.95rem; /* Зменшили з 1rem */
+    }
+
+    .section-title {
+        font-size: 1.8rem; /* Зменшили з 2rem */
+    }
+
+    .about-story,
+    .about-mission {
+        padding: 40px 0; /* Зменшили з 50px */
+    }
+
+    .story-text,
+    .mission-text {
+        font-size: 0.95rem; /* Зменшили з 1rem */
+        padding: 0 15px; /* Зменшили з 20px */
+    }
 }

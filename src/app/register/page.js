@@ -1,13 +1,14 @@
 'use client'
 
 // app/register/page.jsx
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './Register.module.css';
 
 const Register = () => {
     const [submitted, setSubmitted] = useState(false);
+    const loginButton = useRef(0)
 
     const validationSchema = Yup.object({
         name: Yup.string()
@@ -27,7 +28,6 @@ const Register = () => {
 
     const handleSubmit = (values, { setSubmitting }) => {
         console.log('Registrierungsformular:', values);
-        // Тут пізніше fetch до ендпоінту
         setSubmitting(false);
         setSubmitted(true);
     };
