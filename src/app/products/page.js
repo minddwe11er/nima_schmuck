@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { fetchProducts, fetchProductsCount } from '@/api/productsAPI';
 import Link from 'next/link';
@@ -110,10 +110,8 @@ export default function ProductsPage() {
                     <section className="product-grid">
                         <h2 className="products-title">Unser Schmuck</h2>
                         <div className="grid">
-                            {loading ? (
-                                <p>Lade Produkte...</p>
-                            ) : (
-                                products.map((product) => (
+                            <Suspense fallback={<p>Loading...</p>}>
+                                {products.map((product) => (
                                     <Link key={product.id} href={`/products/${product.id}`}>
                                         <article className="product-card">
                                             <div className="image-wrapper">
@@ -143,8 +141,8 @@ export default function ProductsPage() {
                                             </button>
                                         </article>
                                     </Link>
-                                ))
-                            )}
+                                ))}
+                            </Suspense>
                         </div>
 
                         {pagination.total > Number(searchParams.get('limit') || 6) && (
